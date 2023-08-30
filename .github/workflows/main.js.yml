@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: 'Install packages'
-        run: npm install --frozen-lockfile
+        run: npm ci
       - name: 'check tests'
         run: npm run test
       - name: 'check tests coverage'
