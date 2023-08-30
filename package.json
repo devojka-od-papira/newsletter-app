@@ -69,8 +69,5 @@
 			"pre-commit": "npm run format && npm run lint",
 			"pre-push": "npm run test"
 		}
-	},
-	"lint": {
-		"*.{ts,tsx}": "eslint --fix"
 	}
 }
