@@ -17,11 +17,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'npm'
       - name: 'Install packages'
-        run: yarn install --frozen-lockfile
+        run: npm ci --force
       - name: 'check tests'
-        run: yarn test
+        run: npm run test
       - name: 'check tests coverage'
-        run: yarn coverage
+        run: npm run coverage
   
