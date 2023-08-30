@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+#npx tsc --noEmit && npx eslint --fix . && npx prettier --write .
+##!/bin/sh
+#. "$(dirname "$0")/_/husky.sh"
+echo ':building_construction::construction_worker: Styling your project before committing:male-construction-worker::building_construction:'
+echo 'please be patient, this may take a while...'
+# Check ESLint Standards
+yarn lint ||
+(
+    echo ':hammer::x: Yoo, you have a problem in your code. Check linter :hammer::x:
+          Run yarn lint, add changes and try commit again.';
+    false;
+)
+echo ':tada: No error found: committing this now.... :sparkles::rocket::man-surfing::beers:'
+npx lint-staged
